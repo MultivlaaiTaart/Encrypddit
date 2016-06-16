@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  if message
+   p #{message}
+  else
+   p Welcome to #{title}
+  
+  div.encBox
+    form(name="encrypt", action="/", method="post")
+      span.label Username
+      input(type="text", name="Username")
+      span.label Password
+      input(type="password", name="Pass")
+      span.label Message
+      input(type="text", name="Message")
+      input(type="submit", value="encrypt")
+
+  div.decBox
+  form(name="decrypt", action="/decrypt", method="post")
+      span.label Username
+      input(type="text", name="Username")
+      span.label Password
+      input(type="password", name="Pass")
+      input(type="submit", value="decrypt")
+   a(href="leak") Nothing to see here

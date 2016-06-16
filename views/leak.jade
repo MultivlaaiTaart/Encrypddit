@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  ul
+  each val, index in contents
+    li= index + ': ' + val.Username + ' ' + val.Message
+  a(href="/") Back
